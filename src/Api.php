@@ -28,121 +28,28 @@ class Api {
     }
 
     /**
-     * @return \Freshdesk\Resources\Agent
+     * @return \Freshdesk\Resources\Solution
      */
-    public function agents()
+    public function solutionCategories($locale = null)
     {
-        return $this->api->agents;
+        return $this->api->solutions->categories($locale);
     }
 
     /**
-     * @return \Freshdesk\Resources\Company
+     * @return \Freshdesk\Resources\Solution
      */
-    public function companies()
+    public function solutionFolders($id,$locale = null)
     {
-        return $this->api->companies;
+
+        return $this->api->solutions->folders($id,$locale);
     }
 
     /**
-     * @return \Freshdesk\Resources\Contact
+     * @return \Freshdesk\Resources\Solution
      */
-    public function contacts()
+    public function solutionArticles($id, $locale = null)
     {
-        return $this->api->contacts;
-    }
 
-    /**
-     * @return \Freshdesk\Resources\Group
-     */
-    public function groups()
-    {
-        return $this->api->groups;
-    }
-
-    /**
-     * @return \Freshdesk\Resources\Ticket
-     */
-    public function tickets()
-    {
-        return $this->api->tickets;
-    }
-
-    /**
-     * @return \Freshdesk\Resources\TimeEntry
-     */
-    public function timeEntries()
-    {
-        return $this->api->timeEntries;
-    }
-
-    /**
-     * @return \Freshdesk\Resources\Conversation
-     */
-    public function conversations()
-    {
-        return $this->api->conversations;
-    }
-
-    /**
-     * @return \Freshdesk\Resources\Category
-     */
-    public function categories()
-    {
-        return $this->api->categories;
-    }
-
-    /**
-     * @return \Freshdesk\Resources\Forum
-     */
-    public function forums()
-    {
-        return $this->api->forums;
-    }
-
-    /**
-     * @return \Freshdesk\Resources\Topic
-     */
-    public function topics()
-    {
-        return $this->api->topics;
-    }
-
-    /**
-     * @return \Freshdesk\Resources\Comment
-     */
-    public function comments()
-    {
-        return $this->api->comments;
-    }
-    /**
-     * @return \Freshdesk\Resources\EmailConfig
-     */
-    public function emailConfigs()
-    {
-        return $this->api->emailConfigs;
-    }
-
-    /**
-     * @return \Freshdesk\Resources\Product
-     */
-    public function products()
-    {
-        return $this->api->products;
-    }
-
-    /**
-     * @return \Freshdesk\Resources\BusinessHour
-     */
-    public function businessHours()
-    {
-        return $this->api->businessHours;
-    }
-
-    /**
-     * @return \Freshdesk\Resources\SLAPolicy
-     */
-    public function slaPolicies()
-    {
-        return $this->api->slaPolicies;
+        return $this->api->solutions->articles($id,$locale);
     }
 }
